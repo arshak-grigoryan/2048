@@ -1,0 +1,54 @@
+@import './heading.css';
+@import './board.css';
+@import './gameMessage.css';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: var(--bgColorMain);
+}
+:root{
+    --bgColorMain: #faf8ef;
+    --bgColorGameOver:#eee4daba;
+    --bgColorGameWin:#edc22e80;
+    --colorValueScore: #ffffff;
+    --colorValue2or4orTitle: #776e65;
+    --colorValueOthers: #f9f6f2;
+    --bgColorButton:#8f7a66;
+    --bgColorBoard:#bbada0;
+    --bgColorNull: #eee4da59;
+    --bgColor2: #eee4da;
+    --bgColor4: #ede0c8;
+    --bgColor8: #f2b179;
+    --bgColor16: #f59563;
+    --bgColor32: #f67c5f;
+    --bgColor64: #f65e3b;
+    --bgColor128: #edcf72;
+    --bgColor256: #edcc61;
+    --bgColor512: #edc850;
+    --bgColor1024: #edc53f;
+    --bgColor2048: #edc22e;
+    --bgColorOther: #3c3a32;
+}
+#container{
+    width: 500px;
+    margin: 40px auto;
+}
+#game_container{
+    width: 500px;
+    height: 500px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#game_intro, #game_intro > strong{
+    color: var(--colorValue2or4orTitle);
+    font-size: 18px;
+}
+#game_explanation, #game_explanation > strong{
+    color: var(--colorValue2or4orTitle);
+    font-size: 18px;
+}
