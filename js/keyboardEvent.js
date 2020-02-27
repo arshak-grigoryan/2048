@@ -1,6 +1,6 @@
 import { isArrFull, isThereAnyStep } from './checkValues.js';
 import arrowRight from './steps.js/rightStep.js';
-// import arrowLeft from './steps.js/LeftStep.js';
+import arrowLeft from './steps.js/LeftStep.js';
 // import arrowUp from './steps.js/UpStep.js';
 // import arrowDown from './steps.js/DownStep.js';
 import { gameState } from './gameState.js';
