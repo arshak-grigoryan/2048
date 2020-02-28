@@ -12,10 +12,12 @@ body{
     background-color: var(--bgColorMain);
 }
 :root{
+    --widthMain: 500px;
     --textSizeSinglOrTwoeDigit: 55px;
     --textSizeThreeDigit: 45px;
     --textSizeFourDigit: 35px;
     --textSizeFiveDigit: 25px;
+    --textSizeGameInfo: 18px;
     --bgColorMain: #faf8ef;
     --bgColorGameOver:#eee4daba;
     --bgColorGameWin:#edc22e80;
@@ -39,22 +41,22 @@ body{
     --bgColorOther: #3c3a32;
 }
 #container{
-    width: 500px;
+    width: var(--widthMain);
     margin: 40px auto;
 }
 #game_container{
-    width: 500px;
-    height: 500px;
+    width: var(--widthMain);
+    height: var(--widthMain);
     margin-top: 40px;
     margin-bottom: 40px;
 }
 #game_intro, #game_intro > strong{
     color: var(--colorValue2or4orTitle);
-    font-size: 18px;
+    font-size: var(--textSizeGameInfo);
 }
 #game_explanation, #game_explanation > strong{
     color: var(--colorValue2or4orTitle);
-    font-size: 18px;
+    font-size: var(--textSizeGameInfo);
 }
 #game_explanation{
     position: relative;
@@ -71,26 +73,19 @@ body{
 
 @media only screen and (max-width:500px){
     :root{
+        --widthMain: 300px;
         --textSizeSinglOrTwoeDigit: 33px;
         --textSizeThreeDigit: 27px;
         --textSizeFourDigit: 21px;
         --textSizeFiveDigit: 15px;
+        --textSizeGameInfo: 10.8px;
     }
     #container{
-        width: 300px;
         margin: 24px auto;
     }
     #game_container{
-        width: 300px;
-        height: 300px;
         margin-top: 24px;
         margin-bottom: 24px;
-    }
-    #game_intro, #game_intro > strong{
-        font-size: 10.8px;
-    }
-    #game_explanation, #game_explanation > strong{
-        font-size: 10.8px;
     }
     #game_explanation::after{
         top: calc(100% + 12px);

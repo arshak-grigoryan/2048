@@ -1,7 +1,7 @@
 #game_over, #game_win{
     position: absolute;
-    height: 500px;
-    width: 500px;
+    height: var(--widthMain);
+    width: var(--widthMain);
     display: none;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
     margin-top: 30px;
     background-color: var(--bgColorButton);
     color: var(--colorValueOthers);
-    font-size: 18px;
+    font-size: var(--textSizeGameInfo);
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 3px;
@@ -39,16 +39,11 @@
 }
 
 @media only screen and (max-width:500px){
-    #game_over, #game_win{
-        height: 300px;
-        width: 300px;
-    }
     #game_over > p, #game_win > p{
         font-size: 21.6px;
     }
     #game_over > div, #game_win_buttons > div{
         margin-top: 18px;
-        font-size: 10.8px;
         padding: 6px 12px;
     }
     #game_win_buttons > div{

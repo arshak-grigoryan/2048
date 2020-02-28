@@ -1,7 +1,7 @@
 #new-game{
     background-color: var(--bgColorButton);
     color: var(--colorValueOthers);
-    font-size: 18px;
+    font-size: var(--textSizeGameInfo);
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 3px;
@@ -39,7 +39,6 @@
 
 @media only screen and (max-width:500px){
     #new-game{
-        font-size: 10.8px;
         padding: 6px 12px;
     }
     #title{
