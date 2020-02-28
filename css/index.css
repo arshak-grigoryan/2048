@@ -12,6 +12,10 @@ body{
     background-color: var(--bgColorMain);
 }
 :root{
+    --textSizeSinglOrTwoeDigit: 55px;
+    --textSizeThreeDigit: 45px;
+    --textSizeFourDigit: 35px;
+    --textSizeFiveDigit: 25px;
     --bgColorMain: #faf8ef;
     --bgColorGameOver:#eee4daba;
     --bgColorGameWin:#edc22e80;
@@ -63,4 +67,32 @@ body{
     color: var(--colorValue2or4orTitle);
     width: 100%;
     border-top: 1px solid var(--colorValue2or4orTitle);
+}
+
+@media only screen and (max-width:500px){
+    :root{
+        --textSizeSinglOrTwoeDigit: 33px;
+        --textSizeThreeDigit: 27px;
+        --textSizeFourDigit: 21px;
+        --textSizeFiveDigit: 15px;
+    }
+    #container{
+        width: 300px;
+        margin: 24px auto;
+    }
+    #game_container{
+        width: 300px;
+        height: 300px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    #game_intro, #game_intro > strong{
+        font-size: 10.8px;
+    }
+    #game_explanation, #game_explanation > strong{
+        font-size: 10.8px;
+    }
+    #game_explanation::after{
+        top: calc(100% + 12px);
+    }
 }

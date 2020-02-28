@@ -37,3 +37,21 @@
     display: flex;
     flex-direction: row;
 }
+
+@media only screen and (max-width:500px){
+    #game_over, #game_win{
+        height: 300px;
+        width: 300px;
+    }
+    #game_over > p, #game_win > p{
+        font-size: 21.6px;
+    }
+    #game_over > div, #game_win_buttons > div{
+        margin-top: 18px;
+        font-size: 10.8px;
+        padding: 6px 12px;
+    }
+    #game_win_buttons > div{
+        margin: 18px 9px 0 9px;
+    }
+}

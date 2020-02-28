@@ -36,3 +36,20 @@
     font-weight: bold;
     text-align: center;
 }
+
+@media only screen and (max-width:500px){
+    #new-game{
+        font-size: 10.8px;
+        padding: 6px 12px;
+    }
+    #title{
+        font-size: 48px;
+    }
+    #current-score, #best-score{
+        font-size: 7.8px;
+        padding: 6px 9px 5px 9px;
+    }
+    #current-score-value, #best-score-value{
+        font-size: 15px;
+    }
+}

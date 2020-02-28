@@ -30,16 +30,16 @@ function setSize(tile_value){
         arr3 = [1024, 2048, 4096, 8192],
         arr4 = [16384, 32768, 65536]
     if(arr.indexOf(val) !== -1){
-        return '55px'
+        return 'var(--textSizeSinglOrTwoeDigit)'
     }
     if(arr2.indexOf(val) !== -1){
-        return '45px'
+        return 'var(--textSizeThreeDigit)'
     }
     if(arr3.indexOf(val) !== -1){
-        return '35px'
+        return 'var(--textSizeFourDigit)'
     }
     if(arr4.indexOf(val) !== -1){
-        return '25px'
+        return 'var(--textSizeFiveDigit)'
     }
 }
 
