@@ -1,15 +1,14 @@
-import setNewTileStyle from '../newTileStyle.js';
+import setTileStyle from '../setTileStyle.js';
 import { isThereCurrentArrowStep, isReach2048 } from '../checkValues.js';
 import { tile_live_values } from '../liveValues.js';
 import randome_tile from '../random.js';
-import { current_score_value, bestScore } from '../score.js';
+import { currentScore, bestScore } from '../score.js';
 
 function downStepNull(){
     for(let j = 0; j < tile_live_values.length; j++){
-        for(let i = tile_live_values.length-2; i >= 0; i--){
+        for(let i = tile_live_values.length-2; i >= 0; i--){ // i = tile_live_values.length-2 -> exclude 4th row
             if(tile_live_values[i][j] !== null && tile_live_values[i+1][j] === null){
                 let tile_live = document.getElementsByClassName(`tile_live${i}${j}`)[0]
-                // console.log(`down${i}${j}`)
                 tile_live.classList.remove(`tile_live${i}${j}`)
                 tile_live.classList.add(`tile_live${i+1}${j}`)
                 tile_live_values[i+1][j] = tile_live_values[i][j]
@@ -21,7 +20,7 @@ function downStepNull(){
 
 function downStepSum(){
     for(let j = 0; j < tile_live_values.length; j++){
-        for(let i = tile_live_values.length-2; i >= 0; i--){
+        for(let i = tile_live_values.length-2; i >= 0; i--){ // i = tile_live_values.length-2 -> exclude 4th row
             
             let currentValue = tile_live_values[i][j],
                 nextValue = tile_live_values[i+1][j]
@@ -36,10 +35,10 @@ function downStepSum(){
                 next_tile_live.style.zIndex = '20'
 
                 let value = tile_live_values[i+1][j] * 2
-                current_score_value['value'] += value
-                document.getElementById('current-score-value').textContent = current_score_value['value']
-                bestScore(current_score_value['value'])
-                setNewTileStyle(next_tile_live, value)
+                currentScore['value'] += value
+                document.getElementById('current-score-value').textContent = currentScore['value']
+                bestScore(currentScore['value'])
+                setTileStyle(next_tile_live, value)
                 tile_live_values[i][j] = null
                 tile_live_values[i+1][j] = value
                 downStepNull()
@@ -57,10 +56,12 @@ function downStepSum(){
     }
 }
 
+/*  tile appearing is possible when available at least one step(neighbour value is equal to it or equal to null) 
+    or after any step which already have been completed */
+    
 export default function arrowDown(){
     let firstTime = true
     if(firstTime){
-        // tox stugi qayl hnaravor a teche u qatlery ani u nor vandak haytnvi
         if(isThereCurrentArrowStep('down')){
             firstTime = false
             for(let i = 0; i < tile_live_values.length-1; i++){
@@ -75,7 +76,6 @@ export default function arrowDown(){
             setTimeout(()=>randome_tile(),200) 
         }
     } 
-    // tox qayler ani heto ete eli qayler hnaravor klinen tox nor vandak haytnvi
     else{
         for(let i = 0; i < tile_live_values.length-1; i++){
             downStepNull()
@@ -90,7 +90,5 @@ export default function arrowDown(){
             setTimeout(()=>randome_tile(),200) 
         }        
     }
-
-    console.log(tile_live_values,'down')
 }
 

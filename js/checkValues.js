@@ -11,7 +11,6 @@ function isArrFull(){
             }
         }
     }
-    console.log(counter, 'isArrFull')
     if(counter === 16){
         return true
     } else{
@@ -40,9 +39,8 @@ function addFrameWithUndefinedValues(arr){
 function isThereCurrentArrowStep(arrowType){
     let arr_empty = [[],[],[],[]]
     let arr = addFrameWithUndefinedValues(fillArrWithCurrentValues(arr_empty))
-    // console.log(arr)
     let counter_values = 0,
-        check_for_movie = 0
+        check_for_step = 0
 
     for(let i = 1; i < arr.length-1; i++){
         for(let j = 1; j < arr.length-1; j++){
@@ -50,40 +48,40 @@ function isThereCurrentArrowStep(arrowType){
                 counter_values++
                 if(arrowType === 'right'){
                     if(arr[i][j+1] !== undefined && arr[i][j+1] !== null && arr[i][j] !== arr[i][j+1]){
-                        check_for_movie++
+                        check_for_step++
                     } 
                     if(arr[i][j+1] === undefined){
-                        check_for_movie++
+                        check_for_step++
                     }
                 }
                 else if(arrowType === 'left'){
                     if(arr[i][j-1] !== undefined && arr[i][j-1] !== null && arr[i][j] !== arr[i][j-1]){
-                        check_for_movie++
+                        check_for_step++
                     } 
                     if(arr[i][j-1] === undefined){
-                        check_for_movie++
+                        check_for_step++
                     }
                 }
                 else if(arrowType === 'up'){
                     if(arr[i-1][j] !== undefined && arr[i-1][j] !== null && arr[i][j] !== arr[i-1][j]){
-                        check_for_movie++
+                        check_for_step++
                     } 
                     if(arr[i-1][j] === undefined){
-                        check_for_movie++
+                        check_for_step++
                     }
                 }
                 else if(arrowType === 'down'){
                     if(arr[i+1][j] !== undefined && arr[i+1][j] !== null && arr[i][j] !== arr[i+1][j]){
-                        check_for_movie++
+                        check_for_step++
                     } 
                     if(arr[i+1][j] === undefined){
-                        check_for_movie++
+                        check_for_step++
                     }
                 }
             }
         }
     }
-    if(check_for_movie === counter_values){
+    if(check_for_step === counter_values){
         return false
     } else{
         return true
@@ -109,7 +107,6 @@ function isThereAnyStep(){
             }
         }
     }
-    console.log(counter, 'isThereAnyStep')
     if(counter !== 16){
         return true
     } else{

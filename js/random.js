@@ -1,4 +1,4 @@
-import newTileStyle from './newTileStyle.js';
+import setTileStyle from './setTileStyle.js';
 import { tile_live_values } from './liveValues.js';
 import { isArrFull } from './checkValues.js';
 
@@ -27,22 +27,18 @@ function randomCoordinates(){
 }
 
 export default function randome_tile(){
-    let board_live = document.getElementById('board_live')
-    let tile_live = document.createElement('div')
+    let board_live = document.getElementById('board_live'),
+        tile_live = document.createElement('div')
         tile_live.classList.add('tile_live')
     let value = random2or4()
 
-    newTileStyle(tile_live, value)
+    setTileStyle(tile_live, value)
 
-    let randomCoordinatesValues = randomCoordinates()
+    let ranCoord = randomCoordinates()
 
-    if(randomCoordinatesValues !== undefined){
-        tile_live.classList.add(`tile_live${randomCoordinatesValues}`)
-        tile_live_values[randomCoordinatesValues[0]][randomCoordinatesValues[1]] = value
+    if(ranCoord !== undefined){
+        tile_live.classList.add(`tile_live${ranCoord}`)
+        tile_live_values[ranCoord[0]][ranCoord[1]] = value
         board_live.append(tile_live)
-    } else{
-        // setTimeout(()=>console.log('169'))
-        // do nothing
-        // setTimeout(()=>document.getElementById('game_over').style.display = 'flex',200) 
     }
 }

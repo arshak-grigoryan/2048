@@ -52,3 +52,15 @@ body{
     color: var(--colorValue2or4orTitle);
     font-size: 18px;
 }
+#game_explanation{
+    position: relative;
+}
+#game_explanation::after{
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 0;
+    content: '';
+    color: var(--colorValue2or4orTitle);
+    width: 100%;
+    border-top: 1px solid var(--colorValue2or4orTitle);
+}
