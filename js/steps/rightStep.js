@@ -68,13 +68,10 @@ export default function arrowRight(){
             for(let i = 0; i < tile_live_values.length-1; i++){
                 rightStepNull()
             }
-
             rightStepSum()  
-
             if(isReach2048()){
                 setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
             }
-
             setTimeout(()=>randome_tile(),200) 
         }
     } 
@@ -82,13 +79,10 @@ export default function arrowRight(){
         for(let i = 0; i < tile_live_values.length-1; i++){
             rightStepNull()
         }
-
         rightStepSum() 
-
         if(isReach2048()){
             setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
         }
-
         if(isThereCurrentArrowStep('right')){
             setTimeout(()=>randome_tile(),200) 
         }        

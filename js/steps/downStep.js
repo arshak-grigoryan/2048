@@ -26,6 +26,7 @@ function downStepSum(){
                 nextValue = tile_live_values[i+1][j]
 
             if(currentValue !== null && nextValue !== null && currentValue === nextValue){
+
                 let current_tile_live = document.getElementsByClassName(`tile_live${i}${j}`)[0]
                 current_tile_live.classList.remove(`tile_live${i}${j}`)
                 current_tile_live.classList.add(`tile_live_${i+1}${j}`)
@@ -67,9 +68,7 @@ export default function arrowDown(){
             for(let i = 0; i < tile_live_values.length-1; i++){
                 downStepNull()
             }
-
             downStepSum()  
-
             if(isReach2048()){
                 setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
             }            
@@ -80,9 +79,7 @@ export default function arrowDown(){
         for(let i = 0; i < tile_live_values.length-1; i++){
             downStepNull()
         }
-
         downStepSum()  
-
         if(isReach2048()){
             setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
         }
@@ -91,4 +88,3 @@ export default function arrowDown(){
         }        
     }
 }
-

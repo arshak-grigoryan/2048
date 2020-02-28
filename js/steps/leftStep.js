@@ -9,13 +9,10 @@ function leftStepNull(){
         for(let j = 1; j < tile_live_values.length; j++){ // j = 1 -> exclude 1 -th column
             if(tile_live_values[i][j] !== null && tile_live_values[i][j-1] === null){
                 let tile_live = document.getElementsByClassName(`tile_live${i}${j}`)[0]
-                if(tile_live === undefined){debugger}
                 tile_live.classList.remove(`tile_live${i}${j}`)
                 tile_live.classList.add(`tile_live${i}${j-1}`)
                 tile_live_values[i][j-1] = tile_live_values[i][j]
                 tile_live_values[i][j] = null
-                if(tile_live === undefined){debugger}
-
             } 
         }
     }
@@ -29,6 +26,7 @@ function leftStepSum(){
                 nextValue = tile_live_values[i][j-1]
 
             if(currentValue !== null && nextValue !== null && currentValue === nextValue){
+                
                 let current_tile_live = document.getElementsByClassName(`tile_live${i}${j}`)[0]
                 current_tile_live.classList.remove(`tile_live${i}${j}`)
                 current_tile_live.classList.add(`tile_live_${i}${j-1}`)
@@ -70,7 +68,6 @@ export default function arrowLeft(){
             for(let i = 0; i < tile_live_values.length-1; i++){
                 leftStepNull()
             }
-
             leftStepSum()  
             if(isReach2048()){
                 setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
@@ -82,7 +79,6 @@ export default function arrowLeft(){
         for(let i = 0; i < tile_live_values.length-1; i++){
             leftStepNull()
         }
-
         leftStepSum()  
         if(isReach2048()){
             setTimeout(()=>document.getElementById('game_win').style.display = 'flex',200) 
@@ -92,4 +88,3 @@ export default function arrowLeft(){
         }        
     }
 }
-
